@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttrMapper", "src\AttrMapper\AttrMapper.csproj", "{0715E1F1-663F-47FF-8C18-2BD8B709DD65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttrMapper.Examples.ConsoleApp", "samples\AttrMapper.Examples.ConsoleApp\AttrMapper.Examples.ConsoleApp.csproj", "{40DE8C7A-E430-4302-9845-725752A3E6A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0715E1F1-663F-47FF-8C18-2BD8B709DD65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0715E1F1-663F-47FF-8C18-2BD8B709DD65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0715E1F1-663F-47FF-8C18-2BD8B709DD65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0715E1F1-663F-47FF-8C18-2BD8B709DD65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40DE8C7A-E430-4302-9845-725752A3E6A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40DE8C7A-E430-4302-9845-725752A3E6A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40DE8C7A-E430-4302-9845-725752A3E6A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40DE8C7A-E430-4302-9845-725752A3E6A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
