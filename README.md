@@ -10,12 +10,6 @@
 [![GitHub Stars](https://img.shields.io/github/stars/AssertDevelopment/AttrMapper?style=flat-square&logo=github)](https://github.com/AssertDevelopment/AttrMapper/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/AssertDevelopment/AttrMapper?style=flat-square&logo=github)](https://github.com/AssertDevelopment/AttrMapper/issues)
 
-<p align="center">
-  <a href="https://www.buymeacoffee.com/assertdev">
-    <img src="https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee">
-  </a>
-</p>
-
 ## Why AttrMapper?
 
 **Simple** - No complex configuration or setup. Just add attributes and map!  
@@ -48,8 +42,8 @@ dotnet add package AttrMapper
 <PackageReference Include="AttrMapper" Version="1.0.0" />
 ```
 
-### Basic Usage
-
+## Basic Usage
+### Simple object mapping
 ```csharp
 // Source model
 public class User
@@ -57,33 +51,28 @@ public class User
     public int Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public DateTime BirthDate { get; set; }
-    public decimal Salary { get; set; }
+    public string Email { get; set; }
 }
 
 // Destination DTO with attributes
-[MapFromType(typeof(User))]
 public class UserDto
 {
     public int Id { get; set; }
-    
-    [MapWith(typeof(FullNameConverter))]
-    public string FullName { get; set; }
-    
-    [MapFrom("BirthDate", typeof(AgeConverter))]
-    public int Age { get; set; }
-    
-    [MapIgnore]
-    public string InternalNotes { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Email { get; set; }
 }
 
-// Map single object
-var userDto = AttributeMapper.Map<User, UserDto>(user);
-
-// Map collections
-var userDtos = AttributeMapper.Map<User, UserDto>(userList);
+// Basic mapping (property names must match)
+var user = new User { Id = 1, FirstName = "John", LastName = "Doe", Email = "john@example.com" };
+var dto = AttrMapper.Map<User, UserDto>(user);
 ```
 
+### Collection Mapping
+```csharp
+var users = new List<User> { user1, user2, user3 };
+var dtos = AttrMapper.Map<User, UserDto>(users);
+```
 ## Features
 
 ### 🎯 Attribute-Based Mapping
